@@ -1,4 +1,12 @@
+#This is code used to show off how different iterators
+#are used with the ruby programming language.
+
+#array used to show off iterators
 array = [0,1,2,3,4,5,6,7,8,9]
+
+puts "Array: #{array.map { |number| number}}"
+
+puts
 
 #ruby loop
 index = 0
@@ -59,7 +67,7 @@ puts
 
 #ruby times loop
 puts "Times loop:"
-10.times do |index|
+(array.length).times do |index|
   puts "Times loop: Array Element #{index}: #{array[index]}"
  end
  
