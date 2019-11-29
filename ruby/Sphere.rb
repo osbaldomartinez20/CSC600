@@ -7,11 +7,11 @@ class Sphere
     end
 
     def area
-        return (4.0*(self.radius**2)*Math::PI)
+        return (4.0*(self.radius**2)*Math::PI) #area of sphere
     end
 
     def volume
-        return (4.0*(self.radius**3)*Math::PI) / 3.0
+        return (4.0*(self.radius**3)*Math::PI) / 3.0 #volume of sphere
     end
     
 end
@@ -42,5 +42,22 @@ class MyBall < Ball
 
 end
 
-b = MyBall.new
-b.show
+puts "I will ask you some questions in oprder to create a ball for you."
+puts
+
+puts "What is your name?"
+name = gets
+name = name.chomp #this is used to cut out the \n from the user pressing enter
+
+puts "What color would you like your ball to be?"
+color = gets
+color = color.chomp
+
+puts "What is your desired radius?(in cm)"
+rad = gets.to_f
+
+ball = MyBall.new(rad, color, name)
+puts
+puts "Here is your ball's information."
+puts
+ball.show
