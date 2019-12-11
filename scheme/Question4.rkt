@@ -1,0 +1,13 @@
+(define (displayRound x) (display (round x)))
+(define functionMax (lambda (funcName from to)
+   (cond
+     ((< (- to from) 1e-10)
+      (display "Maximum is at x(")
+      (displayRound (/ (+ from to) 2))
+      (display ") = ")
+      (displayRound (funcName (/ (+ from to) 2))))
+     (else (let ((a1 (+ from (/ (- to from) 3)))
+                 (a2 (- to (/ (- to from) 3))))
+             (if (< (funcName a1) (funcName a2))
+                 (functionMax funcName a1 to)
+                 (functionMax funcName from a2)))))))
